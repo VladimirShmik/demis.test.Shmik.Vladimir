@@ -1,0 +1,322 @@
+* {
+    box-sizing: border-box;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 16px;
+    vertical-align: baseline;
+    font-kerning: normal;
+    font-family: 'Robot', serif;
+
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: none;
+}
+button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+a{
+    text-decoration: none;
+}
+.body-wrapper{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+.body-wrapper--overflow{
+    overflow: hidden;
+}
+.p-1{
+    padding: 1rem;
+}
+.m-1{
+    margin: 1rem;
+}
+.mb-1{
+    margin-bottom: 1rem;
+}
+.pb-1{
+    padding-bottom: 1rem;
+}
+.pt-1{
+    padding-top: 1rem;
+}
+.g-1{
+    gap: 1rem;
+}
+.g-half{
+    gap: 0.5rem;
+}
+.footer{
+
+}
+.main{
+    margin: 4rem 0;
+}
+.section-wrapper__title{
+ font-size: 3rem;
+    margin-bottom: 2rem;
+}
+/*shop-section*/
+.shop-section{
+    display: flex;
+    flex-direction: column;
+
+}
+.shop-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    place-items: normal;
+
+}
+.shop-card{
+    display: grid;
+    grid-auto-flow: row;
+    width: 100%;
+    grid-template-rows: 250px 1fr;
+    place-items: start;
+    border: 1px solid #cdcdcd;
+    border-radius: 1rem;
+
+}
+.shop-card__img{
+    width: 100%;
+    height: 100%;
+    max-height: 250px;
+    object-fit: contain;
+    border-bottom: 1px solid #cdcdcd;
+}
+.shop-block{
+    display: grid;
+    grid-auto-flow: row;
+    place-items: center center;
+    width: 100%;
+}
+.shop-block__title{
+    font-size: 2rem;
+    justify-self: start;
+    font-weight: 700;
+    max-width: 240px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+.shop-block__btn{
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 1rem 0;
+    background-color: cornflowerblue;
+    color: #ffffff;
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.3s ease-in-out all;
+}
+.shop-block__btn:hover, .shop-block__btn:active, .shop-block__btn:focus{
+    opacity: 0.8;
+    transition: 0.3s ease-in-out all;
+}
+.shop-box{
+    display: grid;
+    grid-auto-flow: column;
+    width: 100%;
+    place-content: space-between;
+    place-items: center;
+}
+.shop-counter{
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center;
+
+}
+.shop-counter__symbol{
+    display: grid;
+    place-items: center;
+    place-content: center;
+    font-size: 1rem;
+    width: 25px;
+    height: 30px;
+    border: 1px solid #cdcdcd;
+    cursor: pointer;
+}
+.shop-counter__symbol--number{
+    width: 50px;
+    height: 30px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number] {
+    -moz-appearance: textfield;
+}
+.shop-box__price{
+    font-size: 1.5rem;
+    color: crimson;
+    font-weight: 600;
+}
+body{
+    position: relative;
+}
+.body--overflow{
+    overflow: hidden;
+}
+.modal-dialog{
+    max-width: 600px;
+    margin: 1.75rem auto;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    position: relative;
+    z-index: 1070;
+    height: 100%;
+}
+.modal-fade {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    outline: 0;
+    background-color: rgb(33, 37, 41, 0.5);
+}
+.modal-fade.show{
+    display: block;
+}
+.modal-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+    outline: 0;
+    padding: 1rem;
+}
+.modal-header{
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #cdcdcd;
+    display: flex;
+    justify-content: end;
+}
+.modal-header__btn{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.modal-body{
+
+}
+.modal-body__img{
+    width: 100px;
+    height: 100px;
+}
+.modal-body__text{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+.modal-body__span{
+    font-weight: 700;
+}
+.form-grid{
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    border: 1px solid #cdcdcd;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+.form-label{
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+.form-input{
+    padding: 0.7rem 1rem;
+    border-radius: 1rem;
+    border: 1px solid #cdcdcd;
+}
+.form-area{
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    border: 1px solid #cdcdcd;
+    resize: none;
+    min-height: 100px;
+}
+.form-btn{
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 1rem 0;
+    background-color: cornflowerblue;
+    color: #ffffff;
+    cursor: pointer;
+    opacity: 1;
+    transition: 0.3s ease-in-out all;
+    border-radius: 1rem;
+}
+.form-btn:hover, .form-btn:active, .form-btn:focus{
+    opacity: 0.8;
+    transition: 0.3s ease-in-out all;
+}
+.form-btn.disabled{
+    background-color: #cdcdcd;
+    pointer-events: none;
+}
+.form-legend{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    background-color: #ffffff;
+    padding: 0 0.5rem ;
+}
+.error-text{
+    color: red;
+    display: none;
+}
+.hidden{
+    display: none;
+}
+.form-accept{
+    font-size: 3rem;
+    text-align: center;
+    padding: 2rem 0;
+}
